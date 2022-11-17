@@ -1,0 +1,19 @@
+@import '../../styles/cards';
+
+.activities{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+div.play{
+  content: url("src/app/images/play-image2.png");
+}
+div.quiz-list{
+  content: url("src/app/images/gestion-image2.png");
+}
+div.stats{
+  content: url("src/app/images/resultats-image2.png");
+}

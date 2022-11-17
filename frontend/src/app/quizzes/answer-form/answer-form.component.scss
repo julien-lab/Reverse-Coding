@@ -1,0 +1,29 @@
+@import '../../../styles/cards';
+
+button{
+  margin:1%;
+  background-color: #4175ba;
+  border-color: #4175ba;
+}
+
+input{
+  margin:2%;
+}
+
+#answer-input{
+  width: 55%;
+}
+
+#checkbox{
+  zoom: 2;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 ;
+
+}
+
+#answer-form{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items:center;
+}

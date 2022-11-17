@@ -1,0 +1,38 @@
+<section id="data" *ngIf="quizGames && quiz && player">
+  <h3> Résultats de {{ player.name }} {{ player.surname }} sur le quiz "{{ quiz.name }}" </h3>
+  <section id="listeQuizGames" >
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="nom" scope="col">Date</th>
+            <th class="theme" scope="col">Nombre de questions réussies</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let quizgame of quizGames ">
+          <tr>
+            <td>{{quizgame.date | date:'longDate' }}</td>
+            <td>{{ quiz.questions.length - quizgame.questionsFailed.length }}/{{ quiz.questions.length }}</td>
+            <td><button class="btn btn-primary" (click)="openDialogResults(quizgame.selectedAnswers, quizgame.questionsFailed, quiz.questions)" >Détails</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+  </section>
+  <section id="listeQuestionsEchouees">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th class="nom" scope="col">Questions</th>
+          <th class="theme" scope="col">Nombre d'échec (sur {{ quizGames.length }} parties)</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let question of quiz.questions ">
+        <tr>
+          <td>{{ question.label }}</td>
+          <td> {{ mapQuestions.get(question.label) }}</td>
+        </tr>
+        </tbody>
+      </table>
+  </section>
+</section>

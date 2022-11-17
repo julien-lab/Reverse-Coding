@@ -1,0 +1,21 @@
+@import '../../../styles/cards';
+
+#blocAnswer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#answer {
+  flex: 2;
+}
+
+button {
+  background-color: #C71200;
+  border-color: #C71200;
+}
+
+button:hover {
+  background-color: #C71200;
+  border-color: #C71200;
+}

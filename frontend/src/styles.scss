@@ -1,0 +1,32 @@
+@import './styles/variables.scss';
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+
+  background-image: url("app/images/background.png");
+  background-size: cover;
+  //background-image: linear-gradient(to top, white 0%, #6991c7 100%);
+  //background-repeat: repeat-y;
+
+}
+
+.btn-primary{
+  border-radius: 40px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.md-content {
+  border-radius: inherit;
+
+}
+
+.mat-dialog-container {
+  border-radius: 30px!important;
+
+}

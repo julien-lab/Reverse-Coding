@@ -1,0 +1,37 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" >
+<section id="main-section" >
+  <section id="table-section">
+    <table class="table">
+      <thead>
+      <tr>
+        <th class="nom" scope="col">Nom</th>
+        <th class="theme" scope="col" >Theme</th>
+        <th class="nbQuestions" scope="col">Nombre de questions</th>
+        <th class="creationDate" scope="col" >Date de création</th>
+        <th class="edit" scope="col" ></th>
+        <th class="delete" scope="col" ></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let quiz of quizList ">
+      <tr>
+        <td>{{quiz.name}}</td>
+        <td>{{quiz.theme}}</td>
+        <td class="nbQuestions">{{quiz.questions.length}}</td>
+        <td class="creationDate">{{quiz.date | date:'longDate'}}</td>
+        <td>
+          <a routerLink="/edit-quiz/{{quiz.id}}">
+            <button class="btn btn-primary" >Modifier</button>
+          </a>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="deleteQuiz(quiz)">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <div class="quiz-form">
+</div>
+</section>
+</main>
+

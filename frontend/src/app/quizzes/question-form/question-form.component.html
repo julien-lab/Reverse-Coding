@@ -1,0 +1,45 @@
+<section id="creer-question-section">
+  <h2>Ajouter une nouvelle question </h2>
+  <form class="quiz-form" [formGroup]="questionForm">
+      Question <br>
+      <input class="input-custom container-fluid" style="padding: 10px" type="text" id="label" [formControlName]="'label'">
+      <br><br>
+      Indice <br>
+      <input class="input-custom container-fluid" type="text" style="padding: 10px" [formControlName]="'clue'"><br><br>
+      Temps limite <br>
+      <select name="timer-field" id="timer"  [formControlName]="'timer'">
+        <option [value]=3600 >
+          Non
+        </option>
+        <option [value]=5>
+          5 secondes
+        </option>
+        <option [value]=10>
+          10 secondes
+        </option>
+        <option [value]=15>
+          15 secondes
+        </option>
+        <option [value]=20>
+          20 secondes
+        </option>
+        <option [value]=30>
+          30 secondes
+        </option>
+        <option [value]=40>
+          40 secondes
+        </option>
+        <option [value]=50>
+          50 secondes
+        </option>
+        <option [value]=60>
+          60 secondes
+        </option>
+        <option [value]=120>
+          2 minutes
+        </option>
+      </select>
+    <br><br>
+    <button type="submit" class="btn btn-primary" (click)="addQuestion()">Ajouter</button>
+  </form>
+</section>

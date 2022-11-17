@@ -1,0 +1,17 @@
+<section id="main-section" >
+  <h1 style="text-align: center; font-weight: bold"> Résumé de la partie </h1><br>
+  <h3 *ngIf="data.questionsFailed.length === 0">Aucune faute lors de cette partie ! </h3><br>
+  <div *ngIf="data.questionsFailed.length != 0">
+    <section id="questions-section" *ngFor="let question of data.questions">
+      {{question.label}}<br>
+      <section *ngFor="let answer of data.selectedAnswers">
+        <div id="wrongly-selected-answers"*ngIf="question.id === answer.questionId && !answer.isCorrect">
+          {{answer.value}}
+        </div>
+        <div id="good-answer" *ngIf="question.id === answer.questionId && answer.isCorrect">
+          {{answer.value}}
+        </div>
+      </section><br>
+    </section>
+  </div>
+</section>

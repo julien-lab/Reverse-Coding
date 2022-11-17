@@ -1,0 +1,8 @@
+<section id="answer-form" [formGroup]="answerForm">
+      Réponse :
+      <input id="answer-input" type="text" [formControlName]="'value'">
+      Correcte
+      <input type="checkbox" id="checkbox" [formControlName]="'isCorrect'" >
+      <button class="btn btn-primary" (click)="addAnswer()">Ajouter</button>
+</section>
+

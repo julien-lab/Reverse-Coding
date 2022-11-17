@@ -1,0 +1,65 @@
+@import '../../styles/cards.scss';
+
+.flex-container{
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#main-section{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 70%;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+select{
+  border-radius: 40px;
+  border-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor:pointer;
+  width: 230px;
+  height: 45px;
+  padding: 5px;
+}
+
+table,th,td{
+  border:none;
+}
+
+th{
+  font-size: 27px;
+}
+
+td {
+  font-size: 24px;
+}
+
+button{
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #4175ba;
+  border-color: #4175ba;
+}
+
+#lancerQuiz{
+  width: 230px;
+  height: 60px;
+}
+
+#nouveauJoueur{
+  width: 230px;
+}
+
+.nom, .theme, .nbQuestions { width: 33%; }
+
+h4{
+  margin:20px;
+  padding: 10px;
+}

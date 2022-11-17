@@ -1,0 +1,29 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" >
+  <section id="main-section">
+    <div class="card-body">
+      <h3 class="card-title">Créer un nouveau joueur</h3><br>
+      <div class="register-form" [formGroup]="newPlayerForm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Prénom" aria-label="prenom" aria-describedby="basic-addon1" [formControlName]="'name'">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Nom" aria-label="nom" aria-describedby="basic-addon2" [formControlName]="'surname'">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3"><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Age" aria-label="age" aria-describedby="basic-addon3" [formControlName]="'age'">
+        </div>
+      </div><br>
+      <button type="button" class="btn btn-primary" (click)="createPlayer()">Valider</button>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,26 @@
+<section id="question-section">
+  <div class="header" *ngIf="question">
+    <div id="num-question" class="card-header">
+      <h4> <b> Question n°{{ question.numero }} </b></h4>
+      <h4> {{ question.label }} </h4>
+    </div>
+    <div class="clue" *ngIf="question.clue != 'Pas d\'indice pour cette question.'">
+      Indice : {{ question.clue }}
+      <button id="deleteClue" class="btn btn-primary" (click)="deleteClue(question)">Retirer l'indice</button>
+    </div>
+    <div class="no-clue" *ngIf="question.clue == 'Pas d\'indice pour cette question.'">
+      Indice : <input [(ngModel)]="clueValue"  id="clue-input" type="text">
+      <button class="btn btn-primary" (click)="addClue(question)">Ajouter l'indice</button>
+    </div>
+    <div class="answer-form" *ngIf="question.answers.length < 4">
+      <app-answer-form [question]="question"></app-answer-form>
+    </div>
+    <div class="alert-nb-max-answer" *ngIf="question.answers.length >= 4">
+      <p> Le nombre maximum de réponse pour cette question est atteint.</p>
+    </div>
+  </div>
+  <app-answer-list [question]="question" ></app-answer-list>
+  <section>
+  <button id="deleteQuestion" class="btn btn-primary" (click)="deleteQuestion()">Supprimer cette question</button>
+  </section>
+</section>

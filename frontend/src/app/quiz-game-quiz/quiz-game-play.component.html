@@ -1,0 +1,17 @@
+<app-header [inQuizGame]="true" [timer]="timer"></app-header>
+<main class="flex-container" role="main" *ngIf="quizPlayed">
+  <section id="main-section">
+  <section id="quizTitle">
+    <h2>{{quizPlayed.name}}</h2>
+  </section>
+  <section class="question" id="answersAndClue">
+    <h3> Q{{ indiceCurrentQuestion+1 }}/{{ quizPlayed.questions.length }} : {{currentQuestion.label}} </h3>
+    <section class="answer" id="answers-section" *ngFor="let answer of answersClone">
+      <button class="btn btn-primary" id="answers" (click)="isCorrect(answer)">{{answer.value}}</button>
+    </section>
+    <section class="clue" id="clue-section">
+      <button class="btn btn-primary" id="clue" (click)="openDialogClue()"><i class="far fa-lightbulb"></i> Indice</button>
+    </section>
+  </section>
+  </section>
+</main>

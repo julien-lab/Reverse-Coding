@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="container-fluid" *ngIf="!inQuizGame && !linkReturn">
+    <div class="navbar-header">
+      <span> Bienvenue {{currentUser.name }} !</span>
+    </div>
+    <a class="navbar-brand">Memory Quiz</a>
+    <ul class="nav navbar-nav navbar-right">
+      <button class="btn btn-secondary" type="button" (click)="logout()">Se déconnecter</button>
+    </ul>
+  </div>
+  <div class="container-fluid" *ngIf="linkReturn">
+    <div class="navbar-header">
+      <a routerLink="/home">
+        <button class="btn btn-secondary" type="button">Accueil</button>
+      </a>
+      <a routerLink="{{linkReturn}}">
+        <button class="btn btn-secondary" type="button">Retour</button>
+      </a>
+    </div>
+    <a class="navbar-brand">Memory Quiz</a>
+    <ul class="nav navbar-nav navbar-right">
+      <button class="btn btn-secondary" type="button" (click)="logout()">Se déconnecter</button>
+    </ul>
+  </div>
+  <div class="container-fluid" *ngIf="inQuizGame">
+    <div class="navbar-header">
+      <span> Quiz en cours </span>
+    </div>
+    <a class="navbar-brand">Memory Quiz</a>
+    <ul class="nav navbar-nav navbar-right">
+      <button class="btn btn-secondary" type="button" (click)="leaveQuiz()">Terminer le quiz</button>
+    </ul>
+  </div>
+</nav>
+
+

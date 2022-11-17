@@ -1,0 +1,11 @@
+<li *ngIf="answer" [ngStyle]="{'background-color': answer.isCorrect===true ? '#5bac3f' : '', 'color': answer.isCorrect===true ? '#ffffff' : '' }" class="list-group-item" >
+  <div id="blocAnswer">
+    <div id="answer">
+      {{ answer.value }}
+    </div>
+    <div id="deleteAnswer" >
+      <button class="btn btn-primary" (click)="deleteAnswer()"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+</li>
+

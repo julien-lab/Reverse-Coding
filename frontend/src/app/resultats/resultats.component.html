@@ -1,0 +1,39 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" >
+  <section id="main-section">
+  <h1> Résultats </h1>
+  <section class="players" *ngIf="playerList">
+    <h3> Joueur</h3>
+    <label>
+      <select [ngModel]="playerList" (ngModelChange)="changePlayer($event)">
+        <ng-container *ngFor="let player of playerList">
+          <option [ngValue]="player" *ngIf="player.quizGames.length > 0">
+            {{ player.name}} {{ player.surname }}
+          </option>
+        </ng-container>
+      </select>
+    </label>
+  </section>
+  <div class="noPlayerSelected" *ngIf="!quizzesPlayed">
+    <p> Veuillez sélectionner un joueur. </p>
+  </div>
+  <section class="quizzesPlayed" *ngIf="quizzesPlayed">
+    <h3> Quiz </h3>
+    <label>
+      <select [ngModel]="quizzesPlayed" (ngModelChange)="changeQuiz($event)">
+        <ng-container *ngFor="let quiz of quizzesPlayed">
+          <option [ngValue]="quiz">
+              {{ quiz.name }}
+          </option>
+        </ng-container>
+      </select>
+    </label>
+  </section>
+  <div class="noQuizSelected" *ngIf="!dataQuizSelected && quizzesPlayed">
+    <p> Veuillez sélectionner un quiz. </p>
+  </div>
+  <section class="quizSelected" *ngIf="dataQuizSelected && quizzesPlayed">
+    <app-charts [quiz]="quizSelected" [quizGames]="dataQuizSelected" [player]="playerSelected"></app-charts>
+  </section>
+  </section>
+</main>

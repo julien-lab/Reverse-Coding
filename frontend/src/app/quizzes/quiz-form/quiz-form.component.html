@@ -1,0 +1,25 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" >
+<section id="main-section" >
+  <h4> Création d'un nouveau quiz </h4>
+  <form class="quiz-form" [formGroup]="quizForm">
+    <label for="name">
+      <input class="form-control" type="text" id="name" [formControlName]="'name'" placeholder="Nom du Quiz">
+    </label>
+    <br>
+    <label for="theme" >
+      <select name="theme-field" id="theme" [formControlName]="'theme'" >
+        <option value="">Thème</option>
+        <option *ngFor="let currentTheme of THEME_LIST" [value]="currentTheme">
+          {{currentTheme}}
+        </option>
+      </select>
+    </label>
+    <br>
+    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+    <div class="button" id="button">
+        <button type="submit" class="btn btn-primary" (click)="addQuiz()">Créer</button>
+    </div>
+  </form>
+</section>
+</main>

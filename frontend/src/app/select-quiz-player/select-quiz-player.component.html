@@ -1,0 +1,46 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" >
+  <section id="main-section">
+  <section id="choixJoueur">
+  <form [formGroup]="playerForm">
+    <h4>1. Choix du joueur</h4>
+    <label>
+    <select formControlName="id" >
+      <option value="">Sélectionnez un joueur</option>
+      <option [value]="player.id" *ngFor="let player of playerList" >
+        {{ player.name}} {{ player.surname}}
+      </option>
+    </select>
+    </label>
+  </form>
+  <a routerLink="/select-quiz-player/createNewPlayer"><button class="btn btn-primary" id="nouveauJoueur" >Nouveau joueur</button></a>
+  </section>
+
+  <section id="choixQuiz">
+    <h4>2. Choix du quiz</h4>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="nom" scope="col">Nom</th>
+      <th class="theme" scope="col">Theme</th>
+      <th class="nbQuestions" scope="col">Nombre de questions</th>
+      <th class="modifierQuiz" scope="col"></th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let quiz of quizList ">
+    <tr *ngIf="quiz.questions.length > 0" [ngStyle]="{'background-color': quiz.id === quizIdSelected ? '#7c9fcd' : ''}" (click)="rowSelected(quiz);" >
+      <td>{{quiz.name}}</td>
+      <td>{{quiz.theme}}</td>
+      <td class="nbQuestions">{{quiz.questions.length}}</td>
+      <td><a routerLink="/edit-quiz/{{quiz.id}}"><button class="btn btn-primary" >Modifier</button></a></td>
+    </tr>
+    </tbody>
+  </table>
+    <footer>
+      <h5 *ngIf="quizIdSelected && !playerForm.getRawValue().id"> Veuillez sélectionner un joueur pour lancer le quiz.</h5>
+      <h5 *ngIf="!quizIdSelected && playerForm.getRawValue().id"> Veuillez sélectionner un quiz pour commencer à jouer.</h5>
+      <button *ngIf="quizIdSelected && playerForm.getRawValue().id" class="btn btn-primary" (click)="createQuizGame()" id="lancerQuiz">Lancer le Quiz </button>
+    </footer>
+  </section>
+  </section>
+</main>

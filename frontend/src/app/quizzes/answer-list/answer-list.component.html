@@ -1,0 +1,5 @@
+<div class="answer-list">
+  <ul class="list-group list-group-flush" *ngFor="let answer of answerList">
+    <app-answer [answer]="answer" (answerDeleted)="deleteAnswer($event)" ></app-answer>
+  </ul>
+</div>

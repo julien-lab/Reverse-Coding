@@ -1,0 +1,15 @@
+.activities{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+div.creation-quiz{
+  content: url("src/app/images/creation-quiz-image2.png");
+}
+div.modif-quiz{
+  content: url("src/app/images/modification-quiz-image2.png");
+}
+

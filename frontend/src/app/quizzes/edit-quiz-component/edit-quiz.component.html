@@ -1,0 +1,11 @@
+<app-header [linkReturn]="linkReturn"></app-header>
+<main class="flex-container" role="main" *ngIf="quiz">
+  <section id="main-section">
+    <section id="liste-des-questions">
+      <h1> {{ quiz.name }} </h1>
+      <app-question-list [quiz]="quiz" ></app-question-list>
+    </section>
+    <button class="btn btn-primary" (click)="back()">Valider mon quiz</button>
+  </section>
+</main>
+

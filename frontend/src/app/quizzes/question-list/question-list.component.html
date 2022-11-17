@@ -1,0 +1,11 @@
+<section id="question-list">
+  <section id="creerUneQuestion">
+    <app-question-form [quiz]="quiz"></app-question-form>
+  </section>
+  <section class="questions">
+    <section class="question" *ngFor="let question of questionList">
+      <app-question [question]="question" (questionDeleted)="deleteQuestion($event)" ></app-question>
+    </section>
+  </section>
+</section>
+

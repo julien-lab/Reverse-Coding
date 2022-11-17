@@ -1,0 +1,33 @@
+<main class="flex-container" role="main" >
+  <section id="main-section">
+      <h3 id="website-title">Memory Quiz</h3><br>
+      <section class="register-form" [formGroup]="registerForm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Prénom" aria-label="email" aria-describedby="basic-addon1" [formControlName]="'name'">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Nom" aria-label="email" aria-describedby="basic-addon2" [formControlName]="'surname'">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3"><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon3" [formControlName]="'email'">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon4"><i class="fas fa-lock"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon4" [formControlName]="'password'">
+        </div>
+      </section>
+      <button type="button" class="btn btn-primary" (click)="createUser()">Valider</button>
+      <p>ou <a routerLink="/login">Se Connecter</a></p>
+  </section>
+</main>
